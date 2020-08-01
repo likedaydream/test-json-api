@@ -1,0 +1,34 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+#api-response {
+    display: block;
+    font-family: monospace;
+    font-size: 14px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid gray;
+}
+
+.forms-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.forms-col {
+    width: 33.3333%;
+    padding: 15px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}

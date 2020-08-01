@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test JSON API</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Test JSON API</h1>
+
+    <h2>API response</h2>
+
+    <div id="api-response"></div>
+
+    <div class="forms-row">
+        <div class="forms-col">
+            <h2>Get List</h2>
+
+            <form id="list-form" action="api.php?action=get_list" method="get">
+                <p>
+                    <label>Page:
+                        <input class="form-control" type="text" name="page" placeholder="1" value=""></label>
+                </p>
+                <p>
+                    <label>Sort by:
+                        <select name="sort" class="form-control">
+                            <option value="">-</option>
+                            <option value="rating">Rating</option>
+                            <option value="created_at">Created date</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>Order by:
+                        <select name="order" class="form-control">
+                            <option value="">-</option>
+                            <option value="desc">desc</option>
+                            <option value="asc">asc</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Show</button>
+                </p>
+            </form>
+        </div>
+
+        <div class="forms-col">
+            <h2>Get Item</h2>
+
+            <form id="item-form" action="api.php" method="get">
+                <input type="hidden" name="action" value="get_item">
+                <p>
+                    <label>Review ID:
+                        <input class="form-control" type="text" name="id" value=""></label>
+                </p>
+                <p>
+                    <label>fields:
+                        <input class="form-control" type="text" name="fields" placeholder="description, photos" value=""></label>
+                </p>
+                <p>
+                    <button type="submit">Show</button>
+                </p>
+            </form>
+        </div>
+
+        <div class="forms-col">
+            <h2>Create Item</h2>
+
+            <form id="create-form" action="api.php?action=create_item" method="post">
+                <p>
+                    <label>Username:
+                    <input class="form-control" type="text" name="username" value=""></label>
+                </p>
+                <p>
+                    <label>Description:<br>
+                        <textarea class="form-control" name="description"></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Rating:
+                        <input class="form-control" type="text" name="rating" placeholder="Number, 1-5" value=""></label>
+                </p>
+
+                <p>
+                    <label>Photos:</label>
+                    <input class="form-control" type="text" name="photos[]" placeholder="link" value="">
+                    <input class="form-control" type="text" name="photos[]" placeholder="link" value="">
+                    <input class="form-control" type="text" name="photos[]" placeholder="link" value="">
+                </p>
+
+                <p>
+                    <button type="submit">Save</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
